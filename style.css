@@ -1,0 +1,74 @@
+/* Stili generali */
+h1 {
+    text-align: center;
+    font-size: 10vw;
+    color: crimson;
+}
+
+/* Stili per il carrello */
+#cart {
+    position: fixed;
+    top: 50%;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 1%;
+    background-color: white;
+    z-index: 100;
+    transition-property: transform, max-width, max-height;
+    transition-duration: 2s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+}
+
+/* Stili per l'icona del carrello */
+#cart::before {
+    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='grey' class='bi bi-basket-fill' viewBox='0 0 16 16'><path d='M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z'/></svg>");
+    position: sticky;
+    top: 12px;
+    left: 2px;
+    margin: auto;
+    transition: all .25s 1.5s;
+}
+
+
+
+/* Stili per il carrello al passaggio del mouse */
+#cart:hover {
+    max-width: 400px;
+    max-height: 30vh;
+    overflow-y: scroll;
+    transition: all 1s;
+}
+
+#cart:hover::before {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+/* Stili per le card dei libri */
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.card:hover {
+    z-index: 2;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+
+/* Stili per l'evidenziazione dei libri nel carrello */
+.selected {
+    border: 5px solid crimson;
+}
+
+
+
+.cart-item .img-fluid{
+    width: 50px;
+}
